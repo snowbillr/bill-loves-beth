@@ -5,7 +5,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/scripts/index.tsx',
+    app: './src/scripts/index.ts',
   },
 
   output: {
@@ -14,13 +14,13 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.ts', '.js', '.jsx', '.tsx', '.json', '.scss']
+    extensions: ['.ts', '.js', '.json', '.scss']
   },
 
   module: {
     rules: [
       {
-        test: /\.(tsx?|jsx?)$/,
+        test: /\.(ts?|js?)$/,
         include: path.resolve(__dirname, 'src/scripts/'),
         use: {
           loader: 'babel-loader',
@@ -28,7 +28,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        include: path.resolve(__dirname, 'src/styles/'),
+        include: path.resolve(__dirname, 'assets/styles/'),
         use: [
           'style-loader',
           'css-loader',
@@ -38,18 +38,6 @@ module.exports = {
     ]
   },
 
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'production-dependencies',
-          chunks: 'all'
-        }
-      }
-    }
-  },
-
   plugins: [
     new CopyWebpackPlugin([
       {
@@ -57,7 +45,7 @@ module.exports = {
         to: path.resolve(__dirname, 'build')
       },
       {
-        from: path.resolve(__dirname, 'assets', '**', '*'),
+        from: path.resolve(__dirname, 'assets', 'images', '*'),
         to: path.resolve(__dirname, 'build')
       }
     ]),

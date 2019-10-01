@@ -26,9 +26,9 @@
     "webpack-dev-server": "^3.0.0"
   },
   "scripts": {
-    "dev:build": "webpack --config webpack.config.dev.js",
     "dev": "webpack-dev-server --config webpack.config.dev.js",
-    "gh-pages": "webpack --config webpack.config.gh-pages.js"
+    "dev:build": "webpack --config webpack.config.dev.js",
+    "gh-pages:build": "webpack --config webpack.config.gh-pages.js"
   },
   "dependencies": {
     "airtable": "^0.7.1",

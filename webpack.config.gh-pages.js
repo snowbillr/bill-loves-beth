@@ -14,7 +14,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['.ts', '.js', '.json']
+    extensions: ['.ts', '.js', '.json', '.scss']
   },
 
   module: {
@@ -25,20 +25,17 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         }
+      },
+      {
+        test: /\.scss$/,
+        include: path.resolve(__dirname, 'assets/styles/'),
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       }
     ]
-  },
-
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'production-dependencies',
-          chunks: 'all'
-        }
-      }
-    }
   },
 
   plugins: [
@@ -48,14 +45,10 @@ module.exports = {
         to: path.resolve(__dirname, 'docs')
       },
       {
-        from: path.resolve(__dirname, 'assets', '**', '*'),
+        from: path.resolve(__dirname, 'assets', 'images', '*'),
         to: path.resolve(__dirname, 'docs')
       }
     ]),
-    new webpack.DefinePlugin({
-      'typeof CANVAS_RENDERER': JSON.stringify(true),
-      'typeof WEBGL_RENDERER': JSON.stringify(true)
-    }),
     new ForkTsCheckerWebpackPlugin()
   ],
 }

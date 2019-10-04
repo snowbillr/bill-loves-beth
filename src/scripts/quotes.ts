@@ -10,3 +10,9 @@ export const quotes = [
   'You\'re always honest with me',
   'You\'re my teammate',
 ];
+
+export const testQuotes = [
+  '1. quote one here',
+  '2. quote two here',
+  '3. quote three here',
+]

@@ -47,4 +47,4 @@ runTimeline(introTimeline);
 
 document.querySelector('.heart-button').addEventListener('click', () => {
   runTimeline(firstQuoteTimeline);
-});
+}, { once: true });

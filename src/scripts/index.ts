@@ -27,7 +27,7 @@ function replaceQuote() {
           addClass: 'hide',
         }
       ],
-      duration: 200
+      duration: 150
     }
   });
 
@@ -61,7 +61,7 @@ function revealQuote() {
           addClass: 'reveal',
         }
       ],
-      duration: 200
+      duration: 150
     }
   });
   timeline = [ { items: [], duration: 300 }, ...timeline];

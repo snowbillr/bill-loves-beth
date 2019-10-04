@@ -4,3 +4,63 @@ body {
 
   font-family: 'Poppins', sans-serif;
 }
+
+.container {
+  .logo-container {
+    position: fixed;
+    top: 10px;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateY(calc(50vh - 50%));
+
+    .b-inverse {
+      opacity: 0;
+    }
+
+    .ampersand {
+      opacity: 0;
+      transform: scale(0.6) translateY(15px);
+    }
+
+    .b {
+      opacity: 0;
+    }
+
+    &.reveal {
+      &,
+      & > * {
+        transition-property: all;
+        transition-duration: 1500ms;
+        transition-timing-function: linear;
+      }
+
+      .b-inverse {
+        opacity: 1;
+        transform: translateX(15px);
+      }
+
+      .ampersand {
+        opacity: 1;
+        transform: scale(0.6) translateY(0px);
+      }
+
+      .b {
+        opacity: 1;
+        transform: translateX(-15px);
+      }
+    }
+
+    &.move {
+      transition-property: all;
+      transition-duration: 2000ms;
+      transition-timing-function: ease-in-out;
+
+      transform: translateY(0) scale(0.5);
+    }
+  }
+}

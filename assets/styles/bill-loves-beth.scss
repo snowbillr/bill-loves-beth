@@ -97,13 +97,6 @@ body {
     text-align: center;
 
     pointer-events: none;
-    opacity: 0;
-
-    &.reveal {
-      transition: opacity 1000ms ease-in;
-
-      opacity: 1;
-    }
   }
 }
 

@@ -14,21 +14,17 @@ const firstQuoteTimeline = [
         addClass: 'move'
       }
     ],
-    duration: 1000
-  },
-  {
-    items: [
-      {
-        selector: '.quote-container',
-        addClass: 'reveal'
-      }
-    ],
-    duration: 1000
-  }
+    duration: 1500
+ }
 ];
 
 runTimeline(timelines.intro);
 
 document.querySelector('.heart-button').addEventListener('click', () => {
-  runTimeline(firstQuoteTimeline);
+  runTimeline(firstQuoteTimeline, revealQuote);
 }, { once: true });
+
+function revealQuote() {
+  const quoteContainerEl = document.querySelector('.quote-container');
+  quoteContainerEl.textContent = quotes[0];
+}

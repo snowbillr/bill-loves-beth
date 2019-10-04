@@ -1,4 +1,4 @@
-export function runTimeline(timeline) {
+export function runTimeline(timeline, onComplete = () => {}) {
   let runningTime = 0;
   timeline.forEach(entry => {
     entry.items.forEach(item => {
@@ -7,4 +7,6 @@ export function runTimeline(timeline) {
     });
     runningTime += entry.duration;
   });
+
+  setTimeout(onComplete, runningTime);
 }

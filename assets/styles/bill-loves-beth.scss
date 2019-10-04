@@ -80,6 +80,12 @@ body {
       opacity: 1;
       top: calc(50vh - 30px);
     }
+
+    &.move {
+      transition: all 1500ms ease-in-out;
+
+      top: calc(50vh + 60px);
+    }
   }
 }
 

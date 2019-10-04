@@ -31,4 +31,20 @@ const introTimeline = [
   }
 ];
 
+const firstQuoteTimeline = [
+  {
+    items: [
+      {
+        selector: '.heart-button',
+        addClass: 'move'
+      }
+    ],
+    duration: 1000
+  }
+];
+
 runTimeline(introTimeline);
+
+document.querySelector('.heart-button').addEventListener('click', () => {
+  runTimeline(firstQuoteTimeline);
+});

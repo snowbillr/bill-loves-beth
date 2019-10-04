@@ -27,7 +27,7 @@ function replaceQuote() {
           addClass: 'hide',
         }
       ],
-      duration: 150
+      duration: 100
     }
   });
 
@@ -40,7 +40,6 @@ function replaceQuote() {
 function revealQuote() {
   const quoteContainerEl = document.querySelector('.quote-container');
 
-  // const quote = quotes[0];
   const quote = quotePicker.pickQuote();
 
   const words = quote.split(' ');

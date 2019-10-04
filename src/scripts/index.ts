@@ -4,24 +4,15 @@ import '../../assets/styles/bill-loves-beth.scss';
 import { quotes } from './quotes';
 import { timelines } from './timelines';
 
+import { QuotePicker } from './quote-picker';
 import { runTimeline } from './run-timeline';
 
-const firstQuoteTimeline = [
-  {
-    items: [
-      {
-        selector: '.heart-button',
-        addClass: 'move'
-      }
-    ],
-    duration: 1500
- }
-];
+const quotePicker = new QuotePicker();
 
 runTimeline(timelines.intro);
 
 document.querySelector('.heart-button').addEventListener('click', () => {
-  runTimeline(firstQuoteTimeline, revealQuote);
+  runTimeline(timelines.heartMove, revealQuote);
 }, { once: true });
 
 function replaceQuote() {
@@ -36,7 +27,7 @@ function replaceQuote() {
           addClass: 'hide',
         }
       ],
-      duration: 300
+      duration: 200
     }
   });
 
@@ -49,7 +40,8 @@ function replaceQuote() {
 function revealQuote() {
   const quoteContainerEl = document.querySelector('.quote-container');
 
-  const quote = quotes[0];
+  // const quote = quotes[0];
+  const quote = quotePicker.pickQuote();
 
   const words = quote.split(' ');
   const wordEls = words.map(word => {
@@ -69,7 +61,7 @@ function revealQuote() {
           addClass: 'reveal',
         }
       ],
-      duration: 300
+      duration: 200
     }
   });
   timeline = [ { items: [], duration: 300 }, ...timeline];

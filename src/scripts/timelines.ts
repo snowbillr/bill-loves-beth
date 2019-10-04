@@ -25,5 +25,16 @@ export const timelines = {
       ],
       duration: 1000
     }
+  ],
+  heartMove: [
+    {
+      items: [
+        {
+          selector: '.heart-button',
+          addClass: 'move'
+        }
+      ],
+      duration: 1500
+    }
   ]
 }

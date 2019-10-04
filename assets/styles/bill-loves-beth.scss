@@ -95,8 +95,15 @@ body {
 
     width: 100%;
     text-align: center;
+    padding: 20px;
 
     pointer-events: none;
+
+    .quote-word {
+      display: inline-block;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
   }
 }
 

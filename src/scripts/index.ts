@@ -26,5 +26,18 @@ document.querySelector('.heart-button').addEventListener('click', () => {
 
 function revealQuote() {
   const quoteContainerEl = document.querySelector('.quote-container');
-  quoteContainerEl.textContent = quotes[0];
+
+  const quote = quotes[0];
+
+  const words = quote.split(' ');
+  const wordEls = words.map(word => {
+    const el = document.createElement('span');
+    el.classList.add('quote-word');
+
+    el.textContent = word;
+
+    return el;
+  });
+
+  quoteContainerEl.append(...wordEls);
 }

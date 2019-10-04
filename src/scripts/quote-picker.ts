@@ -1,17 +1,12 @@
 import { quotes } from './quotes';
 
 export class QuotePicker {
-  private availableQuotes: string[];
-  private usedQuotes: string[];
-
-  constructor() {
-    this.availableQuotes = quotes;
-    this.usedQuotes = [];
-  }
+  private availableQuotes: string[] = [];
+  private usedQuotes: string[] = [];
 
   pickQuote() {
     if (this.availableQuotes.length === 0) {
-      this.availableQuotes = [...this.usedQuotes];
+      this.availableQuotes = [...quotes];
       this.usedQuotes = [];
     }
 

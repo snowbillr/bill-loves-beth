@@ -87,6 +87,24 @@ body {
       top: calc(50vh + 60px);
     }
   }
+
+  .quote-container {
+    position: fixed;
+
+    top: calc(50vh);
+
+    width: 100%;
+    text-align: center;
+
+    pointer-events: none;
+    opacity: 0;
+
+    &.reveal {
+      transition: opacity 1000ms ease-in;
+
+      opacity: 1;
+    }
+  }
 }
 
 @keyframes heartbeat {

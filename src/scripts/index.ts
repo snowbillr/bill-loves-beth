@@ -15,6 +15,15 @@ const firstQuoteTimeline = [
       }
     ],
     duration: 1000
+  },
+  {
+    items: [
+      {
+        selector: '.quote-container',
+        addClass: 'reveal'
+      }
+    ],
+    duration: 1000
   }
 ];
 

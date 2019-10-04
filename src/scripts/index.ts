@@ -39,5 +39,19 @@ function revealQuote() {
     return el;
   });
 
+  let timeline = wordEls.map((wordEl, i) => {
+    return {
+      items: [
+        {
+          selector: `.quote-word:nth-child(${i + 1})`,
+          addClass: 'reveal',
+        }
+      ],
+      duration: 300
+    }
+  });
+  timeline = [ { items: [], duration: 300 }, ...timeline];
+
   quoteContainerEl.append(...wordEls);
+  runTimeline(timeline);
 }

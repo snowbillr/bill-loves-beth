@@ -103,6 +103,16 @@ body {
       display: inline-block;
       margin-right: 5px;
       margin-bottom: 5px;
+
+      opacity: 0;
+      transform: translateY(10px);
+
+      &.reveal {
+        transition: all 300ms ease-out;
+
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 }

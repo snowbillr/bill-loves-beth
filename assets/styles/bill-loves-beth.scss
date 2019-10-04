@@ -113,6 +113,13 @@ body {
         opacity: 1;
         transform: translateY(0);
       }
+
+      &.hide {
+        transition: all 300ms ease-out;
+
+        opacity: 0;
+        transform: translateY(10px);
+      }
     }
   }
 }

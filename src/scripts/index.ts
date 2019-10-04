@@ -24,6 +24,28 @@ document.querySelector('.heart-button').addEventListener('click', () => {
   runTimeline(firstQuoteTimeline, revealQuote);
 }, { once: true });
 
+function replaceQuote() {
+  const quoteContainerEl = document.querySelector('.quote-container');
+
+  const wordEls = Array.from(quoteContainerEl.childNodes);
+  let timeline = wordEls.map((wordEl, i) => {
+    return {
+      items: [
+        {
+          selector: `.quote-word:nth-child(${i + 1})`,
+          addClass: 'hide',
+        }
+      ],
+      duration: 300
+    }
+  });
+
+  runTimeline(timeline, () => {
+    wordEls.forEach(wordEl => quoteContainerEl.removeChild(wordEl));
+    revealQuote();
+  });
+}
+
 function revealQuote() {
   const quoteContainerEl = document.querySelector('.quote-container');
 
@@ -54,4 +76,6 @@ function revealQuote() {
 
   quoteContainerEl.append(...wordEls);
   runTimeline(timeline);
+
+  document.querySelector('.heart-button').addEventListener('click', replaceQuote, { once: true });
 }

@@ -63,7 +63,7 @@ body {
   .heart-button {
     position: fixed;
     left: calc(50vw - 30px);
-    top: calc(50vh);
+    bottom: calc(50vh - 60px);
 
     width: 60px;
     height: 60px;
@@ -78,13 +78,13 @@ body {
       transition: all 1000ms ease-in-out;
 
       opacity: 1;
-      top: calc(50vh - 30px);
+      bottom: calc(50vh - 30px);
     }
 
     &.move {
       transition: all 1500ms ease-in-out;
 
-      top: calc(50vh + 60px);
+      bottom: 30px;
     }
   }
 

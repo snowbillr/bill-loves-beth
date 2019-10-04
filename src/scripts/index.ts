@@ -1,6 +1,8 @@
 import '../../assets/styles/reset.scss';
 import '../../assets/styles/bill-loves-beth.scss';
 
+import { runTimeline } from './run-timeline';
+
 const introTimeline = [
   {
     items: [{
@@ -30,15 +32,3 @@ const introTimeline = [
 ];
 
 runTimeline(introTimeline);
-
-
-function runTimeline(timeline) {
-  let runningTime = 0;
-  timeline.forEach(entry => {
-    entry.items.forEach(item => {
-      const el = document.querySelector(item.selector);
-      setTimeout(() => el.classList.add(item.addClass), runningTime);
-    });
-    runningTime += entry.duration;
-  });
-}

@@ -14,7 +14,7 @@ export const timelines = {
           addClass: 'move',
         }
       ],
-      duration: 1500,
+      duration: 600,
     },
     {
       items: [

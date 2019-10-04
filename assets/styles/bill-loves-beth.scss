@@ -56,7 +56,7 @@ body {
     &.move {
       transition: all 2000ms ease-in-out;
 
-      transform: translateY(0) scale(0.5);
+      transform: translateY(0) scale(0.7);
     }
   }
 
@@ -75,7 +75,7 @@ body {
     opacity: 0;
 
     &.reveal {
-      transition: all 1500ms ease-in-out;
+      transition: all 1000ms ease-in-out;
 
       opacity: 1;
       top: calc(50vh - 30px);

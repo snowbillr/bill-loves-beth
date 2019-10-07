@@ -93,7 +93,7 @@ body {
 
     top: calc(50vh);
     left: calc(50vw);
-    transform: translate(-50%);
+    transform: translateX(-50%) translateY(-50%);
 
     font-size: 18px;
 

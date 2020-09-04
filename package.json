@@ -34,7 +34,7 @@
     "gh-pages:build": "webpack --config webpack.config.gh-pages.js"
   },
   "dependencies": {
-    "airtable": "^0.7.1",
+    "airtable": "^0.7.2",
     "animejs": "^3.1.0",
     "prop-types": "^15.7.2"
   }
